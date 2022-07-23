@@ -7,7 +7,8 @@ class App {
 
     public function __construct() {
         $url = $this->parseURL();
-
+        // cek file controller ada atau tidak
+        // controller
         if (file_exists('../app/controllers/' . $url[0] . '.php')) {
             $this->controller = $url[0];
             unset($url[0]);
@@ -32,12 +33,12 @@ class App {
         // jalankan controller & method, serta kirimkan params jika ada
         call_user_func_array([$this->controller, $this->method], $this->params);
     }
-
+    // untuk membagi url
     public function parseURL() {
         if (isset($_GET["url"])) {
-            $url = rtrim($_GET["url"], '/');
-            $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = explode('/', $url);
+            $url = rtrim($_GET["url"], '/'); //menghapus / diakhir url
+            $url = filter_var($url, FILTER_SANITIZE_URL); //untuk filter karakter aneh
+            $url = explode('/', $url); //membagi url berdasarkan / menjadi array
             return $url;
         } else {
             $url[0] = $this->controller;
