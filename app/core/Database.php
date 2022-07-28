@@ -6,12 +6,15 @@ class Database {
     private $pass = DB_PASS;
     private $db_name = DB_NAME;
 
+    private $dbh;
+    private $stmt;
+
     public function __construct() {
         // data source name
         $dsn = 'mysql:host=' . $this->host .';dbname=' . $this->db_name;
 
         $option = [
-            PDO::ATTR_PERSISTENT => true,
+            PDO::ATTR_PERSISTENT => true, //untuk membuat koneksi db terjaga
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ];
 
@@ -51,11 +54,13 @@ class Database {
         $this->stmt->execute();
     }
 
+    // mengembalikan nilai array
     public function resultSet() {
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // mengembalikan nilai tunggal
     public function single() {
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
