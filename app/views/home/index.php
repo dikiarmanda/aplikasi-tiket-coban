@@ -1,7 +1,7 @@
 <div class="container text-center">
     <div class="row align-items-center">
         <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card mx-auto" style="width: 18rem;">
                 <img src="<?= BASEURL ?>/image/tiket.jpg" class="card-img-top">
                 <div class="card-body">
                     <!-- FIXME: atur gambar agar pas saat diliat di resolusi kecil, atur title sama text card nya -->
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card mx-auto" style="width: 18rem;">
                 <img src="<?= BASEURL ?>/image/tiket.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">Coban Binangun</h5>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card mx-auto" style="width: 18rem;">
                 <img src="<?= BASEURL ?>/image/tiket.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">Coban Binangun</h5>
