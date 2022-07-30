@@ -1,9 +1,15 @@
 <?php 
 
 class Tiket_model {
-    private $hargaTiket = 5000;
+    private $table = 'config';
+    private $db;
+
+    public function __construct() {
+        $this->db = new Database;
+    }
 
     public function getTiket() {
-        return $this->hargaTiket;
+        $this->db->query('SELECT hargaTiket FROM '. $this->table);
+        return $this->db->single();
     }
 }

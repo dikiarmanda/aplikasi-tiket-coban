@@ -26,7 +26,7 @@
                         <a class="nav-link" href="<?= BASEURL ?>/laporan">Laporan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASEURL ?>/about">About</a>
+                        <a class="nav-link" href="<?= BASEURL ?>/stats">Statistik</a>
                     </li>
                 </ul>
             </div>
