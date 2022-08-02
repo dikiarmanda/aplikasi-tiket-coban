@@ -6,5 +6,7 @@
     <div class="mb-3">
         <label for="jumlahTiket" class="form-label">Jumlah Tiket</label>
         <input type="number" class="form-control" name="jumlahTiket" id="jumlahTiket">
+        <br>
+        <input class="btn btn-primary" type="submit" value="Cetak">
     </div>
 </div>
