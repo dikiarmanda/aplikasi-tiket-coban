@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center" id="home">
     <div class="row align-items-center">
         <div class="col-md-4">
             <div class="card mx-auto" style="width: 18rem;">
