@@ -8,10 +8,10 @@
     <link rel="shortcut icon" href="<?= BASEURL ?>/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/all.min.css">
-    <link rel="stylesheet" href="<?= BASEURL ?>/css/style.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/myStyle.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?= BASEURL ?>">Coban Binangun</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

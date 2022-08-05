@@ -1,4 +1,4 @@
-<div class="container text-center" id="home">
+<div class="container text-center mt-3">
     <div class="row align-items-center">
         <div class="col-md-4">
             <div class="card mx-auto" style="width: 18rem;">
@@ -21,6 +21,7 @@
                 </div>
             </div>
         </div>
+        <!-- FIXME: lebar tidak sama -->
         <div class="col-md-4">
             <div class="card mx-auto" style="width: 18rem;">
                 <img src="<?= BASEURL ?>/image/tiket.jpg" class="card-img-top">
