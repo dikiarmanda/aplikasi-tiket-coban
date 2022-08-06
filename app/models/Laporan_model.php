@@ -25,4 +25,41 @@ class Laporan_model {
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function hapusTransaksi($id) {
+        $query = "DELETE FROM " . $this->table . " WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+        
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    public function ubahTransaksi($data) {
+        $query = "UPDATE " . $this->table . " SET 
+                    tgl = :tgl,
+                    ket = :ket,
+                    jmlh = :jmlh,
+                    WHERE id = :id";
+        
+        $this->db->query($query);
+        $this->db->bind('id', $data['id']);
+        $this->db->bind('tgl', $data['tgl']);
+        $this->db->bind('ket', $data['ket']);
+        $this->db->bind('jmlh', $data['jmlh']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    public function cariTransaksi() {
+        $keyword = $_POST['keyword'];
+        $query = "SELECT * FROM " . $this->table . " WHERE ket LIKE :keyword";
+        $this->db->query($query);
+        $this->db->bind('keyword', "%$keyword%");
+        
+        return $this->db->resultSet();
+    }
 }
