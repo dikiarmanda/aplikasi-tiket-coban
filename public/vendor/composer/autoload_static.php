@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7fb56d6b16a88419e850d5561f601520
+class ComposerStaticInit893cba9d33016163364dee9c3a405d4f
 {
     public static $classMap = array (
         'CGIF' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
@@ -45,7 +45,7 @@ class ComposerStaticInit7fb56d6b16a88419e850d5561f601520
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit7fb56d6b16a88419e850d5561f601520::$classMap;
+            $loader->classMap = ComposerStaticInit893cba9d33016163364dee9c3a405d4f::$classMap;
 
         }, null, ClassLoader::class);
     }

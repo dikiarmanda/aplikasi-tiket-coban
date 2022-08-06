@@ -28,7 +28,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Coban Binangun</h5>
                     <p class="card-text">Statistik laporan tiketing per bulan</p>
-                    <a href="<?= BASEURL ?>/about" class="btn btn-primary">Statistik</a>
+                    <a href="<?= BASEURL ?>/cetak.php" class="btn btn-primary">Statistik</a>
                 </div>
             </div>
         </div>
