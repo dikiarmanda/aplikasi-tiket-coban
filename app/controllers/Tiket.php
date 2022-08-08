@@ -9,4 +9,10 @@ class Tiket extends Controller {
         $this->view('tiket/index', $data);
         $this->view('templates/footer');
     }
+
+    public function cetak($harga=5000, $jmlh=1) {
+        $data['hrgTiket'] = $harga;
+        $data['jmlh'] = $jmlh;
+        $this->model('Tiket_model')->cetakTiket($data['hrgTiket'],$data['jmlh']);
+    }
 }
