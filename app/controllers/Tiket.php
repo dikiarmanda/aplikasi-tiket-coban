@@ -15,4 +15,9 @@ class Tiket extends Controller {
         $data['jmlh'] = $jmlh;
         $this->model('Tiket_model')->cetakTiket($data['hrgTiket'],$data['jmlh']);
     }
+
+    public function cek()
+    {
+        $this->model('Tiket_model')->cek();
+    }
 }
