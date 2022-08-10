@@ -9,7 +9,7 @@ class Laporan_model {
     }
 
     public function getAllLpr() {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM ' . $this->table . ' ORDER BY id DESC');
         return $this->db->resultSet();
     }
 

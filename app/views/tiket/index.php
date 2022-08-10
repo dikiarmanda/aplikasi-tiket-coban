@@ -1,17 +1,19 @@
 <div class="container p-3 mt-5">
     <!-- FIXME: beri background pada form agar lebih terlihat jelas -->
     <form action="<?= BASEURL ?>/tiket/cetak/" method="post">
+    <input type="hidden" name="tgl" value="<?= date('Y-m-d') ?>">
+    <input type="hidden" name="ket" value="tiket">
     <div class="mb-3">
         <label for="hargaTiket" class="form-label">Harga Tiket</label>
-        <input type="number" class="form-control" name="hargaTiket" id="hargaTiket" placeholder="Rp.5.000" value="<?= $data['hrgTiket'] ?>">
+        <input type="number" class="form-control" name="hargaTiket" id="hargaTiket" placeholder="Rp.5.000" value="<?= $data['hrgTiket'] ?>" required>
     </div>
     <div class="mb-3">
         <label for="jumlahTiket" class="form-label">Jumlah Tiket</label>
-        <input type="number" class="form-control" name="jumlahTiket" id="jumlahTiket">
+        <input type="number" class="form-control" name="jumlahTiket" id="jumlahTiket" required>
     </div>
     <div class="row">
         <div class="col-sm-4">
-            <button class="btn btn-primary" id="cetak" type="submit">CETAK</button>
+            <button class="btn btn-primary" type="submit">CETAK</button>
         </div>
         <div class="col-sm-4 text-end">
             <h3>Total Harga :</h3>

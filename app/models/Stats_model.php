@@ -14,8 +14,8 @@ class Stats_model {
     }
 
     public function getStatsByYear($year) {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id', $year);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE tgl=:year');
+        $this->db->bind('year', $year);
         return $this->db->single();
     }
 }

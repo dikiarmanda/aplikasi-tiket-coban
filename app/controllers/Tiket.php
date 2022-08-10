@@ -9,15 +9,10 @@ class Tiket extends Controller {
         $this->view('tiket/index', $data);
         $this->view('templates/footer');
     }
-
-    public function cetak($harga=5000, $jmlh=1) {
-        $data['hrgTiket'] = $harga;
-        $data['jmlh'] = $jmlh;
-        $this->model('Tiket_model')->cetakTiket($data['hrgTiket'],$data['jmlh']);
-    }
-
-    public function cek()
-    {
-        $this->model('Tiket_model')->cek();
+    // FIXME: transaksi terinput 2x
+    public function cetak() {
+        $_POST['jmlh'] = $_POST['hargaTiket']*$_POST['jumlahTiket'];
+        $this->model('Laporan_model')->tambahTransaksi($_POST);
+        $this->model('Tiket_model')->cetakTiket($_POST);
     }
 }
