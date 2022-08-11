@@ -9,7 +9,7 @@ class Stats_model {
     }
 
     public function getAllStats() {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE ket = tiket');
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE ket="tiket"');
         return $this->db->resultSet();
     }
 

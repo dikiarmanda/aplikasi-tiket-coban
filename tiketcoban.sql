@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2022 at 04:53 PM
+-- Generation Time: Aug 11, 2022 at 05:58 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -58,7 +58,19 @@ CREATE TABLE `transaksi` (
 
 INSERT INTO `transaksi` (`id`, `tgl`, `ket`, `jmlh`) VALUES
 (1, '2022-07-27', 'tiket', 10000),
-(2, '2022-07-28', 'tiket', 25000);
+(2, '2022-07-28', 'tiket', 25000),
+(3, '2022-08-06', 'tiket', 5000),
+(4, '2022-08-06', 'tiket', 15000),
+(5, '2022-08-06', 'tiket', 5000),
+(9, '2022-08-10', 'tiket', 10000),
+(10, '2022-08-10', 'tiket', 10000),
+(11, '2022-08-10', 'tiket', 25000),
+(12, '2022-08-10', 'tiket', 25000),
+(13, '2022-08-10', 'tiket', 10000),
+(14, '2022-08-10', 'tiket', 10000),
+(15, '2022-08-10', 'tiket', 10000),
+(16, '2022-08-10', 'tiket', 10000),
+(17, '2022-08-10', 'tiket', 10000);
 
 --
 -- Indexes for dumped tables
@@ -90,7 +102,7 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

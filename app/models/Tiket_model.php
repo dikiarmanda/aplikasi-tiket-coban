@@ -25,25 +25,41 @@ class Tiket_model {
         $dompdf->setPaper($customPaper);
 
         // ambil data jumlah pengunjung
-        $this->db->query('SELECT pengunjung FROM ' . $this->table);
+        $this->db->query('SELECT MAX(id) FROM transaksi');
         $temp = $this->db->single();
 
         // set isi tiket
         $struk = '<html><head><style>
-                * {
-                    margin: 0;
-                    padding: 10px;
-                }
+                * { margin: 0 }
+                body { padding: 10px }
+                .page_break { page-break-before: always; }
+                table { font-size: 10px }
             </style></head><body>';
         // cetak tiket sesuai jumlah
         for ($i=1; $i <= $data['jumlahTiket']; $i++) {
-            $struk .= '====================<br>
-                        <h3>COBAN BINANGUN</h3>
-                        <h5>Plintahan, Pandaan, Pasuruan</h5>
-                        <img src="' . BASEURL . '/image/tiket.jpg" width="100px"><br>
-                        Tiket: Rp. ' . $data['hargaTiket'] . '<br>
-                        Pengunjung ke-' . ($temp['pengunjung']+$i) . '<br>
-                        ====================<br>';
+            $struk .= '=======================
+                        <center>
+                            <img src="' . BASEURL . '/image/coban.jpg" width="200px">
+                        </center><br>
+                        <table>
+                            <tr>
+                                <td>ID Transaksi</td>
+                                <td>:</td>
+                                <td>' . ($temp['MAX(id)']+$i) . date('dmY') . '</td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal</td>
+                                <td>:</td>
+                                <td>' . date("d-m-Y") . '</td>
+                            </tr>
+                            <tr>
+                                <td>Tiket</td>
+                                <td>:</td>
+                                <td>Rp. ' . $data['hargaTiket'] . '</td>
+                            </tr>
+                        </table>
+                        =======================
+                        <div class="page_break"></div>';
         }
         $struk .= '</body></html>';
         $dompdf->loadHtml($struk);
