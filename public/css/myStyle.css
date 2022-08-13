@@ -1,9 +1,15 @@
-html, body {
-    height: 100vh;
-}
-
 body {
     background: linear-gradient(45deg, #fbda61, #ff5acd);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+/* icon pada laporan/index */
+.card-body .card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: 20px;
+    right: 10px;
+    opacity: 0.4;
+    font-size: 90px;
 }

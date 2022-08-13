@@ -4,6 +4,37 @@
             <?php Flasher::flash() ?>
         </div>
     </div>
+    <!-- Card -->
+    <div class="row text-white justify-content-evenly">
+        <div class="card bg-danger mt-2" style="width: 18rem;">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fas fa-user-clock"></i>
+                </div>
+                <h5 class="card-title">PEMASUKAN</h5>
+                <div class="display-4 fw-bold">1.200</div>
+            </div>
+        </div>
+        <div class="card bg-success mt-2" style="width: 18rem;">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h5 class="card-title">PENGELUARAN</h5>
+                <div class="display-4 fw-bold">136</div>
+            </div>
+        </div>
+        <div class="card bg-info mt-2" style="width: 18rem;">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h5 class="card-title">SALDO</h5>
+                <div class="display-4 fw-bold">100</div>
+            </div>
+        </div>
+    </div>
+    <!-- End Card -->
     <div class="row justify-content-center">
         <!-- FIXME: ubah ukuran button menjadi kecil di sebelah kiri -->
         <!-- Button trigger modal -->
@@ -23,15 +54,16 @@
             <tbody>
                 <?php $i = 1 ?>
                 <?php foreach ($data['transaksi'] as $transaksi) : ?>
-                <tr>
-                    <td scope="row"><?= $i ?></td>
-                    <td><?= $transaksi['tgl'] ?></td>
-                    <td><?= $transaksi['ket'] ?></td>
-                    <td class="text-end pe-4"><?= $transaksi['jmlh'] ?></td>
-                    <td><a href="<?= BASEURL ?>/laporan/ubah/<?= $transaksi['id']?>" class="text-center ms-2"><i class="fas fa-pen text-success"></i></a>
-                        <a href="<?= BASEURL ?>/laporan/hapus/<?= $transaksi['id']?>" class="text-center ms-2" onclick="return confirm('yakin?')"><i class="fas fa-trash text-danger"></i></a></td>
-                </tr>
-                <?php $i++ ?>
+                    <tr>
+                        <td scope="row"><?= $i ?></td>
+                        <td><?= $transaksi['tgl'] ?></td>
+                        <td><?= $transaksi['ket'] ?></td>
+                        <td class="text-end pe-4"><?= $transaksi['jmlh'] ?></td>
+                        <td><a href="<?= BASEURL ?>/laporan/ubah/<?= $transaksi['id'] ?>" class="text-center ms-2"><i class="fas fa-pen text-success"></i></a>
+                            <a href="<?= BASEURL ?>/laporan/hapus/<?= $transaksi['id'] ?>" class="text-center ms-2" onclick="return confirm('yakin?')"><i class="fas fa-trash text-danger"></i></a>
+                        </td>
+                    </tr>
+                    <?php $i++ ?>
                 <?php endforeach ?>
             </tbody>
         </table>
@@ -44,10 +76,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Tambah Transaksi</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="<?= BASEURL?>/laporan/tambah" method="POST">
+                <form action="<?= BASEURL ?>/laporan/tambah" method="POST">
                     <div class="mb-3">
                         <label class="form-label" for="tgl">Tanggal</label>
                         <input type="date" name="tgl" id="tgl" class="form-control">
@@ -60,10 +92,10 @@
                         <label for="jmlh" class="form-label">Nominal</label>
                         <input type="number" name="jmlh" id="jmlh" class="form-control" aria-describedby="helpId">
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Tambah Transaksi</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-primary">Tambah Transaksi</button>
                 </form>
             </div>
         </div>

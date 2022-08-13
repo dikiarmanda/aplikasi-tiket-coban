@@ -11,3 +11,17 @@ jumlah.addEventListener('input', () => {
         currency: 'IDR'
     }).format(harga.value * jumlah.value);
 });
+
+function openInNewTab(url, triggerPrintDialog = false) {
+    if (url !== "") {
+        const newTabWindow = window.open(url, "_blank");
+        if (newTabWindow !== null) {
+            if (triggerPrintDialog) {
+                newTabWindow.onload = newTabWindow.print;
+            }
+            // newTabWindow.focus();
+        }
+    } else {
+        window.alert("openInNewTab() blocked by browser.");
+    }
+}

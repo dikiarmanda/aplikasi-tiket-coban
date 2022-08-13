@@ -18,7 +18,7 @@ class Tiket_model {
 
     public function cetakTiket($data) {
         $options = new Options();
-        $options->set('isRemoteEnabled', true);
+        $options->set('isJavascriptEnabled', true);
         $dompdf = new Dompdf($options);
         // set ukuran kertas
         $customPaper = array(0,0,164.40948,283.464566929);
