@@ -17,6 +17,12 @@ class Laporan_model {
         $query = "INSERT INTO " . $this->table ." VALUES
                     ('',:tgl,:ket,:jmlh)";
 
+        // cek transaksi pemasukan / pengeluaran
+        if ($data['jnsTrans']==1) {
+            $data['jml']=abs($data['jml']);
+        } else {
+            $data['jml']=abs($data['jml'])*-1;
+        }
         $this->db->query($query);
         $this->db->bind('tgl', $data['tgl']);
         $this->db->bind('ket', $data['ket']);

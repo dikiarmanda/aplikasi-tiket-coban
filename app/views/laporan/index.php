@@ -89,13 +89,23 @@
                         <input type="text" name="ket" id="ket" class="form-control" aria-describedby="helpId">
                     </div>
                     <div class="mb-3">
+                        <label for="pemasukan">Jenis Transaksi</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jnsTrans" id="pemasukan" value="1">
+                            <label class="form-check-label" for="pemasukan">Pemasukan</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jnsTrans" id="pengeluaran" value="0">
+                            <label class="form-check-label" for="pengeluaran">Pengeluaran</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
                         <label for="jmlh" class="form-label">Nominal</label>
                         <input type="number" name="jmlh" id="jmlh" class="form-control" aria-describedby="helpId">
                     </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                <button type="submit" class="btn btn-primary">Tambah Transaksi</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Tambah Transaksi</button>
                 </form>
             </div>
         </div>
