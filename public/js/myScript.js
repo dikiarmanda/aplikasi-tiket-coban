@@ -19,7 +19,8 @@ function openInNewTab(url, triggerPrintDialog = false) {
             if (triggerPrintDialog) {
                 newTabWindow.onload = newTabWindow.print;
             }
-            // newTabWindow.focus();
+            newTabWindow.focus();
+            setTimeout(newTabWindow.close(), 3000);
         }
     } else {
         window.alert("openInNewTab() blocked by browser.");

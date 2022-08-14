@@ -16,6 +16,10 @@ class Tiket_model {
         return $this->db->single();
     }
 
+    public function tambahTiket($data) {
+        
+    }
+
     public function cetakTiket($data) {
         $options = new Options();
         $options->set('isJavascriptEnabled', true);
