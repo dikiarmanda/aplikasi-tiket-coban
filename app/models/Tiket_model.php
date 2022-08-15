@@ -17,7 +17,16 @@ class Tiket_model {
     }
 
     public function tambahTiket($data) {
-        
+        $query = "INSERT INTO transaksi VALUES
+                    ('',:tgl,:ket,:jmlh)";
+
+        $this->db->query($query);
+        $this->db->bind('tgl', $data['tgl']);
+        $this->db->bind('ket', $data['ket']);
+        $this->db->bind('jmlh', $data['hargaTiket']);
+
+        $this->db->execute();
+        return $this->db->rowCount();
     }
 
     public function cetakTiket($data) {
@@ -69,8 +78,8 @@ class Tiket_model {
         $dompdf->loadHtml($struk);
         // ubah html ke pdf
         $dompdf->render();
-
-        $dompdf->stream('tiket.pdf', array('Attachment' => 0));
+        // generate pdf to browser
+        $dompdf->stream();
     }
     
 }

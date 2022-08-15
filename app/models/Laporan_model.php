@@ -13,6 +13,16 @@ class Laporan_model {
         return $this->db->resultSet();
     }
 
+    public function getIncome() {
+        $this->db->query('SELECT SUM(jmlh) FROM ' . $this->table . ' WHERE jmlh>0');
+        return $this->db->single();
+    }
+
+    public function getOutcome() {
+        $this->db->query('SELECT SUM(jmlh) FROM ' . $this->table . ' WHERE jmlh<0');
+        return $this->db->single();
+    }
+
     public function tambahTransaksi($data) {
         $query = "INSERT INTO " . $this->table ." VALUES
                     ('',:tgl,:ket,:jmlh)";

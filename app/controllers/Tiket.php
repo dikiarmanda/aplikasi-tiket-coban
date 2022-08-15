@@ -12,7 +12,7 @@ class Tiket extends Controller {
     // FIXME: transaksi terinput 2x
     public function cetak() {
         $this->model('Tiket_model')->cetakTiket($_POST);
-        for ($i=1; $i <= $_POST['jmlh']; $i++) { 
+        for ($i=1; $i <= $_POST['jumlahTiket']; $i++) { 
             $this->model('Tiket_model')->tambahTiket($_POST);
         }
     }

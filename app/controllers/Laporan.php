@@ -4,6 +4,8 @@ class Laporan extends Controller {
     public function index() {
         $data['judul'] = 'Laporan';
         $data['transaksi'] = $this->model('Laporan_model')->getAllLpr();
+        $data['income'] = $this->model('Laporan_model')->getIncome();
+        $data['outcome'] = $this->model('Laporan_model')->getOutcome();
         $this->view('templates/header', $data);
         $this->view('laporan/index', $data);
         $this->view('templates/footer');
