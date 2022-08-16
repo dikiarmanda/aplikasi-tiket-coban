@@ -1,3 +1,10 @@
+<?php 
+function money_format($string, $angka) {
+    $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+	return $hasil_rupiah;
+}
+?>
+
 <div class="container mt-3">
     <div class="row justify-content-center">
         <table class="table w-75">
