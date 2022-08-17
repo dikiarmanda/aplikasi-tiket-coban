@@ -1,5 +1,4 @@
-<div class="container p-3 mt-5">
-    <!-- FIXME: beri background pada form agar lebih terlihat jelas -->
+<div class="container bg-light bg-opacity-50 rounded-4 p-3 mt-5">
     <form action="<?= BASEURL ?>/tiket/cetak/" method="post">
     <input type="hidden" name="tgl" value="<?= date('Y-m-d') ?>">
     <input type="hidden" name="ket" value="tiket">

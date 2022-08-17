@@ -6,7 +6,7 @@ function money_format($string, $angka) {
 setlocale(LC_MONETARY,"id_ID");
 ?>
 
-<div class="container mt-3">
+<div class="container bg-light bg-opacity-50 rounded-4 mt-3">
     <div class="row">
         <div class="col-lg-6">
             <?php Flasher::flash() ?>

@@ -5,7 +5,7 @@ function money_format($string, $angka) {
 }
 ?>
 
-<div class="container mt-3">
+<div class="container bg-light bg-opacity-50 rounded-4 mt-3">
     <div class="row justify-content-center">
         <table class="table w-75">
             <thead>
