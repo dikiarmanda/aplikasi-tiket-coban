@@ -1,5 +1,5 @@
-<div class="container text-center">
-    <div class="row align-items-center">
+<div class="container text-center my-5">
+    <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card mx-auto" style="width: 18rem;">
                 <img src="<?= BASEURL ?>/image/tiket.jpg" class="card-img-top">
@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Coban Binangun</h5>
                     <p class="card-text">Statistik laporan tiketing per bulan</p>
-                    <a href="<?= BASEURL ?>/about" class="btn btn-primary">Statistik</a>
+                    <a href="<?= BASEURL ?>/cetak.php" class="btn btn-primary">Statistik</a>
                 </div>
             </div>
         </div>
