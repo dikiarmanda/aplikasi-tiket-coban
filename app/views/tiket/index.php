@@ -18,7 +18,7 @@
             <h3>Total Harga :</h3>
         </div>
         <div class="col-sm-4 text-end">
-            <h3 class="d-none d-inline text-bg-primary py-1 px-2 rounded-3" id="totalHarga"></h3>
+            <h3 class="d-none d-inline text-bg-primary bg-opacity-100 py-1 px-2 rounded-3" id="totalHarga"></h3>
         </div>
     </div>
     </form>
