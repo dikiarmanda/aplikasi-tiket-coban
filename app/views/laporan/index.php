@@ -5,7 +5,7 @@ function money_format($string, $angka) {
 }
 setlocale(LC_MONETARY,"id_ID");
 ?>
-
+<!-- FIXME: atur layout biar cantik dan enak dipandang -->
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
     <div class="row">
         <div class="col-lg-6">
@@ -13,7 +13,7 @@ setlocale(LC_MONETARY,"id_ID");
         </div>
     </div>
     <!-- Card -->
-    <div class="row text-white justify-content-evenly">
+    <div class="row my-4 text-white justify-content-evenly">
         <div class="card bg-success mt-2" style="width: 18rem;">
             <div class="card-body">
                 <div class="card-body-icon">
@@ -43,7 +43,7 @@ setlocale(LC_MONETARY,"id_ID");
         </div>
     </div>
     <!-- End Card -->
-    <div class="row mt-5">
+    <div class="row mx-3 px-5">
         <div class="col-sm-6">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahTransaksi">
@@ -56,6 +56,8 @@ setlocale(LC_MONETARY,"id_ID");
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
+    </div>
+    <div class="row">
         <div class="col-sm-12 mt-4">
             <table class="table w-75 mx-auto">
                 <thead>

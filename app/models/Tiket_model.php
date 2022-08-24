@@ -32,9 +32,11 @@ class Tiket_model {
     public function cetakTiket($data) {
         $options = new Options();
         $options->set('isJavascriptEnabled', true);
+        $options->set('isRemoteEnabled', true);
+        $options->set('enable_html5_parser',true);
         $dompdf = new Dompdf($options);
         // set ukuran kertas
-        $customPaper = array(0,0,164.40948,283.464566929);
+        $customPaper = array(0,0,164.40948,188.9787587875);
         $dompdf->setPaper($customPaper);
 
         // ambil data jumlah pengunjung
@@ -44,15 +46,14 @@ class Tiket_model {
         // set isi tiket
         $struk = '<html><head><style>
                 * { margin: 0 }
-                body { padding: 10px }
+                body { padding: 10px; font-size: 10px }
                 .page_break { page-break-before: always; }
-                table { font-size: 10px }
             </style></head><body>';
         // cetak tiket sesuai jumlah
         for ($i=1; $i <= $data['jumlahTiket']; $i++) {
-            $struk .= '=======================
+            $struk .= '=================================
                         <center>
-                            <img src="' . BASEURL . '/image/coban.jpg" width="200px">
+                            <img src="' . BASEURL . '/image/coban.jpg" width="150px">
                         </center><br>
                         <table>
                             <tr>
@@ -70,8 +71,9 @@ class Tiket_model {
                                 <td>:</td>
                                 <td>Rp. ' . $data['hargaTiket'] . '</td>
                             </tr>
-                        </table>
-                        =======================
+                        </table><br>
+                        <center><p>Supported By<br>PPK ORMAWA UMSIDA 2022</p></center>
+                        =================================
                         <div class="page_break"></div>';
         }
         $struk .= '</body></html>';
@@ -79,7 +81,7 @@ class Tiket_model {
         // ubah html ke pdf
         $dompdf->render();
         // generate pdf to browser
-        $dompdf->stream();
+        $dompdf->stream("tiket.pdf", array('Attachment' => false));
     }
     
 }
