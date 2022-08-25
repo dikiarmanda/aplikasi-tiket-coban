@@ -1,13 +1,18 @@
 <?php 
 
 class Laporan extends Controller {
-    public function index() {
+    public function index($page = 1) {
         $data['judul'] = 'Laporan';
         $data['transaksi'] = $this->model('Laporan_model')->getAllLpr();
+        // pagination
+        $data['page'] = (20 * $page) - 20;
+        $data['jmlhData'] = count($data['transaksi']);
+        // untuk card
         $temp1 = $this->model('Laporan_model')->getIncome();
         $data['income'] = intval($temp1['SUM(jmlh)']);
         $temp2 = $this->model('Laporan_model')->getOutcome();
         $data['outcome'] = intval($temp2['SUM(jmlh)']);
+        
         $this->view('templates/header', $data);
         $this->view('laporan/index', $data);
         $this->view('templates/footer');
