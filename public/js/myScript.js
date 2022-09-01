@@ -12,6 +12,7 @@ jumlah.addEventListener('input', () => {
     }).format(harga.value * jumlah.value);
 });
 
+// FIXME: open preview tiket di tab baru belum bisa
 function openInNewTab(url, triggerPrintDialog = false) {
     if (url !== "") {
         const newTabWindow = window.open(url, "_blank");

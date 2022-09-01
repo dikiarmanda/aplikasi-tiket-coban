@@ -81,7 +81,7 @@ class Tiket_model {
         // ubah html ke pdf
         $dompdf->render();
         // generate pdf to browser
-        $dompdf->stream("tiket.pdf", array('Attachment' => false));
+        $dompdf->stream("tiket.pdf", array('Attachment' => 0));
     }
     
 }

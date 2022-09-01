@@ -7,8 +7,8 @@ setlocale(LC_MONETARY,"id_ID");
 ?>
 <!-- FIXME: atur layout biar cantik dan enak dipandang -->
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
-    <div class="row">
-        <div class="col-lg-6">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 mt-3">
             <?php Flasher::flash() ?>
         </div>
     </div>
@@ -43,18 +43,43 @@ setlocale(LC_MONETARY,"id_ID");
         </div>
     </div>
     <!-- End Card -->
+    <!-- Pagination -->
+    <div class="row">
+        <div class="col-sm-12">
+            <?php $jmlhHal = ceil($data['jmlhData'] / 20) ?>
+            <?php $hal = $data['page']/20+1?>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item <?php if ($hal==1) { echo 'disabled'; } ?>">
+                        <a class="page-link" href="<?= BASEURL ?>/laporan/index/<?= $hal-1 ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                    </li>
+                    <?php for ($i=1; $i <= $jmlhHal; $i++) :?>
+                        <?php if ($i==$hal) : ?>
+                            <li class="page-item active"><a class="page-link" href="<?= BASEURL ?>/laporan/index/<?= $i ?>"><?= $i ?></a></li>
+                        <?php else : ?>
+                            <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/laporan/index/<?= $i ?>"><?= $i ?></a></li>
+                        <?php endif ?>
+                    <?php endfor ?>
+                    <li class="page-item <?php if ($hal==$jmlhHal) { echo 'disabled'; } ?>">
+                        <a class="page-link" href="<?= BASEURL ?>/laporan/index/<?= $hal+1 ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- End Pagination -->
     <div class="row mx-3 px-5">
         <div class="col-sm-6">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahTransaksi">
                 <i class="fas fa-plus"></i> Tambah Transaksi
             </button>
-        </div>
-        <div class="col-sm-6 pe-5">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
         </div>
     </div>
     <div class="row">
@@ -70,19 +95,20 @@ setlocale(LC_MONETARY,"id_ID");
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $i = 1 ?>
-                    <?php foreach ($data['transaksi'] as $transaksi) : ?>
-                        <tr>
-                            <td scope="row"><?= $i ?></td>
-                            <td><?= $transaksi['tgl'] ?></td>
-                            <td><?= $transaksi['ket'] ?></td>
-                            <td class="text-end pe-4"><?= money_format("%i", $transaksi['jmlh']) ?></td>
-                            <td><a href="<?= BASEURL ?>/laporan/ubah/<?= $transaksi['id'] ?>" class="text-center ms-2"><i class="fas fa-pen text-success"></i></a>
-                                <a href="<?= BASEURL ?>/laporan/hapus/<?= $transaksi['id'] ?>" class="text-center ms-2" onclick="return confirm('yakin?')"><i class="fas fa-trash text-danger"></i></a>
-                            </td>
-                        </tr>
-                        <?php $i++ ?>
-                    <?php endforeach ?>
+                    <?php $batas = $data['page'] + 20 ?>
+                    <?php for ($i=$data['page']; $i < $batas; $i++) : ?>
+                        <?php if (isset($data['transaksi'][$i])) : ?>
+                            <tr>
+                                <td scope="row"><?= $i+1 ?></td>
+                                <td><?= $data['transaksi'][$i]['tgl'] ?></td>
+                                <td><?= $data['transaksi'][$i]['ket'] ?></td>
+                                <td class="text-end"><?= money_format("%i", $data['transaksi'][$i]['jmlh']) ?></td>
+                                <td><a href="<?= BASEURL ?>/laporan/ubah/<?= $data['transaksi'][$i]['id'] ?>" class="text-center ms-2"><i class="fas fa-pen text-success"></i></a>
+                                    <a href="<?= BASEURL ?>/laporan/hapus/<?= $data['transaksi'][$i]['id'] ?>" class="text-center ms-2" onclick="return confirm('yakin?')"><i class="fas fa-trash text-danger"></i></a>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                    <?php endfor ?>
                 </tbody>
             </table>
         </div>
