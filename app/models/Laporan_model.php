@@ -13,6 +13,12 @@ class Laporan_model {
         return $this->db->resultSet();
     }
 
+    public function getDataById($id) {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id', $id);
+        return $this->db->single();
+    }
+
     public function getIncome() {
         $this->db->query('SELECT SUM(jmlh) FROM ' . $this->table . ' WHERE jmlh>0');
         return $this->db->single();
@@ -24,8 +30,8 @@ class Laporan_model {
     }
 
     public function tambahTransaksi($data) {
-        $query = "INSERT INTO " . $this->table ." VALUES
-                    ('',:tgl,:ket,:jmlh)";
+        $query = 'INSERT INTO ' . $this->table .' VALUES
+                    ("",:tgl,:ket,:jmlh)';
 
         // cek transaksi pemasukan / pengeluaran
         if ($data['jnsTrans']==1) {
@@ -33,6 +39,7 @@ class Laporan_model {
         } else {
             $data['jml']=abs($data['jml'])*-1;
         }
+
         $this->db->query($query);
         $this->db->bind('tgl', $data['tgl']);
         $this->db->bind('ket', $data['ket']);
@@ -43,21 +50,20 @@ class Laporan_model {
     }
 
     public function hapusTransaksi($id) {
-        $query = "DELETE FROM " . $this->table . " WHERE id = :id";
+        $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
         $this->db->query($query);
         $this->db->bind('id', $id);
         
         $this->db->execute();
-
         return $this->db->rowCount();
     }
 
     public function ubahTransaksi($data) {
-        $query = "UPDATE " . $this->table . " SET 
+        $query = 'UPDATE ' . $this->table . ' SET 
                     tgl = :tgl,
                     ket = :ket,
-                    jmlh = :jmlh,
-                    WHERE id = :id";
+                    jmlh = :jmlh
+                    WHERE id = :id';
         
         $this->db->query($query);
         $this->db->bind('id', $data['id']);
@@ -66,7 +72,6 @@ class Laporan_model {
         $this->db->bind('jmlh', $data['jmlh']);
 
         $this->db->execute();
-
         return $this->db->rowCount();
     }
 
