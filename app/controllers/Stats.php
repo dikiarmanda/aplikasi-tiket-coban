@@ -8,4 +8,13 @@ class Stats extends Controller {
         $this->view('stats/index', $data);
         $this->view('templates/footer');
     }
+    
+    public function tahun($tahun) {
+        $data['judul'] = 'Statistik' . $tahun;
+        $data['bulan'] = $this->model('Stats_model')->getDataBulan($tahun);
+        $data['tahun'] = $this->model('Stats_model')->getDataTahun($tahun);
+        $this->view('templates/header', $data);
+        $this->view('stats/index', $data);
+        $this->view('templates/footer');
+    }
 }

@@ -8,6 +8,9 @@ function money_format($string, $angka) {
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
     <div class="row justify-content-center">
         <!-- FIXME: atur tampilan jumlah pengunjung dan penjualan tiket -->
+        <?= var_dump($data['jualTiket'])?>
+        <hr>
+        <?= var_dump($data['tanggal'])?>
         <p>Jumlah Pengunjung: <?= count($data['jualTiket'])?></p>
         <?php $penjualan = 0 ?>
         <?php foreach ($data['jualTiket'] as $transaksi) : ?>
