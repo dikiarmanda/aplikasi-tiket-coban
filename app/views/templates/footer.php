@@ -2,6 +2,6 @@
 <script src="<?= BASEURL ?>/js/bootstrap.bundle.min.js"></script>
 <script src="<?= BASEURL ?>/js/popper.min.js"></script>
 <script src="<?= BASEURL ?>/js/Chart.js"></script>
-<script src="<?= BASEURL ?>/js/myScript.js"></script>
+<script src="<?= BASEURL ?>/js/script.js"></script>
 </body>
 </html>
