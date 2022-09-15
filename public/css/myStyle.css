@@ -3,9 +3,8 @@ html body {
 }
 
 body {
-    background-image: url("../image/waterfall1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url("../image/cobanb1.png");
+    /*background-size: cover;*/
 }
 
 /* icon pada laporan/index */

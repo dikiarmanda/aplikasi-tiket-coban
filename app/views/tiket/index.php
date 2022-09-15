@@ -3,11 +3,11 @@
     <input type="hidden" name="tgl" value="<?= date('Y-m-d') ?>">
     <input type="hidden" name="ket" value="tiket">
     <div class="mb-3">
-        <label for="hargaTiket" class="form-label">Harga Tiket</label>
+        <h5><label for="hargaTiket" class="form-label">Harga Tiket</label></h5>
         <input type="number" class="form-control" name="hargaTiket" id="hargaTiket" placeholder="Rp.5.000" value="<?= $data['hrgTiket'] ?>" required>
     </div>
     <div class="mb-3">
-        <label for="jumlahTiket" class="form-label">Jumlah Tiket</label>
+       <h5> <label for="jumlahTiket" class="form-label">Jumlah Tiket</label></h5>
         <input type="number" class="form-control" name="jumlahTiket" id="jumlahTiket" required>
     </div>
     <div class="row">
