@@ -84,4 +84,13 @@ class Tiket_model {
         $dompdf->stream("tiket.pdf", array('Attachment' => 0));
     }
     
+    public function ubahHarga($data) {
+        $query = 'UPDATE ' . $this->table . ' SET hargaTiket = :hargaTiket';
+        
+        $this->db->query($query);
+        $this->db->bind('hargaTiket', $data['hargaTiket']);
+    
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 }

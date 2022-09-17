@@ -7,6 +7,7 @@ setlocale(LC_MONETARY,"id_ID");
 ?>
 <!-- FIXME: atur layout biar cantik dan enak dipandang -->
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
+    <!-- notifikasi flasher -->
     <div class="row justify-content-center">
         <div class="col-sm-6 mt-3">
             <?php Flasher::flash() ?>
@@ -125,33 +126,34 @@ setlocale(LC_MONETARY,"id_ID");
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL ?>/laporan/tambah" method="POST">
-                    <input type="hidden" name="id" id="id">
-                    <div class="mb-3">
-                        <label class="form-label" for="tgl">Tanggal</label>
-                        <input type="date" name="tgl" id="tgl" class="form-control" required>
+                <input type="hidden" name="id" id="id">
+                <div class="mb-3">
+                    <label class="form-label" for="tgl">Tanggal</label>
+                    <input type="date" name="tgl" id="tgl" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="ket" class="form-label">Keterangan</label>
+                    <input type="text" name="ket" id="ket" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="pemasukan">Jenis Transaksi</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jnsTrans" id="pemasukan" value="1" required>
+                        <label class="form-check-label" for="pemasukan">Pemasukan</label>
                     </div>
-                    <div class="mb-3">
-                        <label for="ket" class="form-label">Keterangan</label>
-                        <input type="text" name="ket" id="ket" class="form-control" required>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jnsTrans" id="pengeluaran" value="0">
+                        <label class="form-check-label" for="pengeluaran">Pengeluaran</label>
                     </div>
-                    <div class="mb-3">
-                        <label for="pemasukan">Jenis Transaksi</label><br>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jnsTrans" id="pemasukan" value="1" required>
-                            <label class="form-check-label" for="pemasukan">Pemasukan</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jnsTrans" id="pengeluaran" value="0">
-                            <label class="form-check-label" for="pengeluaran">Pengeluaran</label>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="jmlh" class="form-label">Nominal</label>
-                        <input type="number" name="jmlh" id="jmlh" class="form-control" required>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Tambah Transaksi</button>
+                </div>
+                <div class="mb-3">
+                    <label for="jmlh" class="form-label">Nominal</label>
+                    <input type="number" name="jmlh" id="jmlh" class="form-control" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-primary">Tambah Transaksi</button>
                 </form>
             </div>
         </div>
