@@ -12,7 +12,7 @@
     </div>
     <div class="row">
         <div class="col-sm-4">
-            <button class="btn btn-primary" type="submit" onclick="openInNewTab()">CETAK</button>
+            <button class="btn btn-primary" type="submit">CETAK</button>
         </div>
         <div class="col-sm-4 text-end">
             <h3>Total Harga :</h3>
