@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?= BASEURL ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/all.min.css">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/myStyle.css">
+    <script src="<?= BASEURL ?>/js/chart.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

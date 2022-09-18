@@ -44,19 +44,3 @@ $(function() {
         });
     });
 });
-
-// FIXME: open preview tiket di tab baru belum bisa
-// function openInNewTab(url, triggerPrintDialog = false) {
-//     if (url !== "") {
-//         const newTabWindow = window.open(url, "_blank");
-//         if (newTabWindow !== null) {
-//             if (triggerPrintDialog) {
-//                 newTabWindow.onload = newTabWindow.print;
-//             }
-//             newTabWindow.focus();
-//             setTimeout(newTabWindow.close(), 3000);
-//         }
-//     } else {
-//         window.alert("openInNewTab() blocked by browser.");
-//     }
-// }

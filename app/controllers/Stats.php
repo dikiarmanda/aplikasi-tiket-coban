@@ -6,7 +6,7 @@ class Stats extends Controller {
         $data['jualTiket'] = $this->model('Stats_model')->getAllStats();
         $data[] = $this->model('Stats_model')->getDataTahun();
         $this->view('templates/header', $data);
-        $this->view('stats/tahun', $data);
+        $this->view('stats/index', $data);
         $this->view('templates/footer');
     }
     
