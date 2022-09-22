@@ -48,11 +48,7 @@ function money_format($string, $angka) {
         label[i] = thnNow-1;
         thnNow++;
     }
-    const data = [];
-    for (let i = 0; i <= 5; i++) {
-        
-        
-    }
+    let textVisit = '<?= implode(',', $data['thn']['2022']) ?>';
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -87,5 +83,5 @@ function money_format($string, $angka) {
             },
         }
     });
-    console.log(thnNow);
+    console.log(textVisit);
 </script>
