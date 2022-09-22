@@ -104,7 +104,9 @@ class Stats_model {
         array_unique($thn);
         foreach ($thn as $cek) {
             $data['tahunan'][$cek] = $this->getDataBulan($cek);
+            $data['tahunan'][$cek]['visitorThn'] = array_sum($data['tahunan'][$cek]['visitorBln']);
+            $data['tahunan'][$cek]['tiketThn'] = array_sum($data['tahunan'][$cek]['tiketBln']);
         }
-        return $data;
+        return $data['tahunan'];
     }
 }

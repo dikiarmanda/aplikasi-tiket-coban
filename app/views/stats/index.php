@@ -6,10 +6,13 @@ function money_format($string, $angka) {
 ?>
 
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
+    <div>
+        <canvas id="myChart" width="200px"></canvas>
+    </div>
     <div class="row justify-content-center">
         <!-- FIXME: atur tampilan jumlah pengunjung dan penjualan tiket -->
         
-        <p>Jumlah Pengunjung: <?= count($data['jualTiket'])?></p>
+        <p>Jumlah Pengunjung: <?= var_dump($data['thn'])?></p>
         <?php $penjualan = 0 ?>
         <?php foreach ($data['jualTiket'] as $transaksi) : ?>
             <?php $penjualan += $transaksi['jmlh']?>
@@ -36,14 +39,20 @@ function money_format($string, $angka) {
             </tbody>
         </table>
     </div>
-    <div>
-        <canvas id="myChart" width="200px"></canvas>
-    </div>
 </div>
-<?php $tahun = [2020, 2021, 2022, 2023, 2024, 2025]?>
 <script>
+    let thnNow = moment().format('Y');
     const ctx = document.getElementById('myChart').getContext('2d');
-    const label = <?= $tahun ?>;
+    const label = [];
+    for (let i = 0; i <= 5; i++) {
+        label[i] = thnNow-1;
+        thnNow++;
+    }
+    const data = [];
+    for (let i = 0; i <= 5; i++) {
+        
+        
+    }
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -76,7 +85,7 @@ function money_format($string, $angka) {
                     beginAtZero: true
                 }
             },
-            xAxisID: 'Jumlah'
         }
     });
+    console.log(thnNow);
 </script>
