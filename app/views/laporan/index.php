@@ -7,6 +7,7 @@ setlocale(LC_MONETARY,"id_ID");
 ?>
 <!-- FIXME: atur layout biar cantik dan enak dipandang -->
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
+    <!-- notifikasi flasher -->
     <div class="row justify-content-center">
         <div class="col-sm-6 mt-3">
             <?php Flasher::flash() ?>
@@ -77,7 +78,7 @@ setlocale(LC_MONETARY,"id_ID");
     <div class="row mx-3 px-5">
         <div class="col-sm-6">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahTransaksi">
+            <button type="button" class="btn btn-primary btnTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
                 <i class="fas fa-plus"></i> Tambah Transaksi
             </button>
         </div>
@@ -103,7 +104,7 @@ setlocale(LC_MONETARY,"id_ID");
                                 <td><?= $data['transaksi'][$i]['tgl'] ?></td>
                                 <td><?= $data['transaksi'][$i]['ket'] ?></td>
                                 <td class="text-end"><?= money_format("%i", $data['transaksi'][$i]['jmlh']) ?></td>
-                                <td><a href="<?= BASEURL ?>/laporan/ubah/<?= $data['transaksi'][$i]['id'] ?>" class="text-center ms-2"><i class="fas fa-pen text-success"></i></a>
+                                <td><a href="<?= BASEURL ?>/laporan/ubah/<?= $data['transaksi'][$i]['id'] ?>" class="text-center ms-2 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $data['transaksi'][$i]['id'] ?>"><i class="fas fa-pen text-success"></i></a>
                                     <a href="<?= BASEURL ?>/laporan/hapus/<?= $data['transaksi'][$i]['id'] ?>" class="text-center ms-2" onclick="return confirm('yakin?')"><i class="fas fa-trash text-danger"></i></a>
                                 </td>
                             </tr>
@@ -116,41 +117,43 @@ setlocale(LC_MONETARY,"id_ID");
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="tambahTransaksi" tabindex="-1" role="dialog" aria-labelledby="judulTambah" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="judulModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Transaksi</h5>
+                <h5 class="modal-title" id="judulModal">Tambah Transaksi</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL ?>/laporan/tambah" method="POST">
-                    <div class="mb-3">
-                        <label class="form-label" for="tgl">Tanggal</label>
-                        <input type="date" name="tgl" id="tgl" class="form-control">
+                <input type="hidden" name="id" id="id">
+                <div class="mb-3">
+                    <label class="form-label" for="tgl">Tanggal</label>
+                    <input type="date" name="tgl" id="tgl" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="ket" class="form-label">Keterangan</label>
+                    <input type="text" name="ket" id="ket" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="pemasukan">Jenis Transaksi</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jnsTrans" id="pemasukan" value="1" required>
+                        <label class="form-check-label" for="pemasukan">Pemasukan</label>
                     </div>
-                    <div class="mb-3">
-                        <label for="ket" class="form-label">Keterangan</label>
-                        <input type="text" name="ket" id="ket" class="form-control" aria-describedby="helpId">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jnsTrans" id="pengeluaran" value="0">
+                        <label class="form-check-label" for="pengeluaran">Pengeluaran</label>
                     </div>
-                    <div class="mb-3">
-                        <label for="pemasukan">Jenis Transaksi</label><br>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jnsTrans" id="pemasukan" value="1">
-                            <label class="form-check-label" for="pemasukan">Pemasukan</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jnsTrans" id="pengeluaran" value="0">
-                            <label class="form-check-label" for="pengeluaran">Pengeluaran</label>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="jmlh" class="form-label">Nominal</label>
-                        <input type="number" name="jmlh" id="jmlh" class="form-control" aria-describedby="helpId">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Tambah Transaksi</button>
+                </div>
+                <div class="mb-3">
+                    <label for="jmlh" class="form-label">Nominal</label>
+                    <input type="number" name="jmlh" id="jmlh" class="form-control" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-primary">Tambah Transaksi</button>
                 </form>
             </div>
         </div>

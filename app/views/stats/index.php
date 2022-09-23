@@ -6,14 +6,19 @@ function money_format($string, $angka) {
 ?>
 
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
+    <div>
+        <canvas id="myChart" width="200px"></canvas>
+    </div>
     <div class="row justify-content-center">
         <!-- FIXME: atur tampilan jumlah pengunjung dan penjualan tiket -->
-        <h5><p>Jumlah Pengunjung: <?= count($data['jualTiket'])?></p></h5>
+        
+        <p>Jumlah Pengunjung: <?= var_dump($data['thn'])?></p>
         <?php $penjualan = 0 ?>
         <?php foreach ($data['jualTiket'] as $transaksi) : ?>
             <?php $penjualan += $transaksi['jmlh']?>
         <?php endforeach ?>
         <h5><p>Jumlah Penjualan Tiket: <?= money_format('%i', $penjualan) ?></p></h5>
+        <p>Jumlah Penjualan Tiket: <?= money_format('%i', $penjualan) ?></p>
         <table class="table w-75">
             <thead>
                 <tr>
@@ -36,3 +41,48 @@ function money_format($string, $angka) {
         </table>
     </div>
 </div>
+<script>
+    let thnNow = moment().format('Y');
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const label = [];
+    for (let i = 0; i <= 5; i++) {
+        label[i] = thnNow-1;
+        thnNow++;
+    }
+    let textVisit = '<?= implode(',', $data['thn']['2022']) ?>';
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: label,
+            datasets: [{
+                label: 'Tahun',
+                data: [120, 190, 130, 230, 220, 330],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+        }
+    });
+    console.log(textVisit);
+</script>
