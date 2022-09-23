@@ -1,35 +1,19 @@
-<div class="container text-center my-5">
+<div class="container text-center py-5 my-5">
+    <div class="container mt-5 rounded-4 mt-3">
     <div class="row justify-content-center">
-        <div class="col-sm-4">
-            <div class="card mx-auto" style="max-width: 18rem;">
-                <img src="<?= BASEURL ?>/image/tiket.jpg" class="card-img-top">
-                <div class="card-body">
-                    <!-- FIXME: atur gambar agar pas saat diliat di resolusi kecil, atur title sama text card nya -->
-                    <h5 class="card-title">Coban Binangun</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="<?= BASEURL ?>/tiket" class="btn btn-primary">Tiket <i class="fa-solid fa-ticket"></i></a>
-                </div>
-            </div>
+                    <div class="card bg-opacity-50" style="width: 30rem:"> 
+          <div class="card-header">
+            <span class="placeholder col-12 bg-primary"></span>
+            <h5 class="card">Featured</h5>
+          </div>
+          <div class="card-body py-5">
+            <h5 class="card-title">Tiket</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Tiket</a>
+            <a href="#" class="btn btn-primary">Laporan</a>
+            <a href="#" class="btn btn-primary">Statistik</a>
+          </div>
         </div>
-        <div class="col-sm-4">
-            <div class="card mx-auto" style="max-width: 18rem;">
-                <img src="<?= BASEURL ?>/image/tiket.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Coban Binangun</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="<?= BASEURL ?>/laporan" class="btn btn-primary">Laporan <i class="fa-solid fa-file-chart-column"></i></a> 
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mx-auto" style="max-width: 18rem;">
-                <img src="<?= BASEURL ?>/image/tiket.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Coban Binangun</h5>
-                    <p class="card-text">Statistik laporan tiketing per bulan</p>
-                    <a href="<?= BASEURL ?>/cetak.php" class="btn btn-primary">Statistik</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+         </div>
+     </div>
+ </div>

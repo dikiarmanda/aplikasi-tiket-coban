@@ -8,12 +8,12 @@ function money_format($string, $angka) {
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
     <div class="row justify-content-center">
         <!-- FIXME: atur tampilan jumlah pengunjung dan penjualan tiket -->
-        <p>Jumlah Pengunjung: <?= count($data['jualTiket'])?></p>
+        <h5><p>Jumlah Pengunjung: <?= count($data['jualTiket'])?></p></h5>
         <?php $penjualan = 0 ?>
         <?php foreach ($data['jualTiket'] as $transaksi) : ?>
             <?php $penjualan += $transaksi['jmlh']?>
         <?php endforeach ?>
-        <p>Jumlah Penjualan Tiket: <?= money_format('%i', $penjualan) ?></p>
+        <h5><p>Jumlah Penjualan Tiket: <?= money_format('%i', $penjualan) ?></p></h5>
         <table class="table w-75">
             <thead>
                 <tr>
