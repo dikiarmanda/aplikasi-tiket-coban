@@ -26,6 +26,7 @@ body {
     font-size: 80px;
     margin-top: 80px;
 }
+
 button {
     width: 200px;
     margin: 20px 10px;
@@ -41,6 +42,7 @@ button {
     border-radius: 10px;
     overflow: hidden;
 }
+
 span {
     height: 100%;
     width: 0;
@@ -55,6 +57,6 @@ span {
 button:hover span {
     width: 100%;
 }
-button: hover {
+button:hover {
     border:none;
 }
