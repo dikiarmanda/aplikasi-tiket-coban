@@ -25,6 +25,8 @@ body {
 .home h1 {
     font-size: 80px;
     margin-top: 80px;
+    color: green;
+    font-family: brush script;
 }
 button {
     width: 200px;
@@ -33,7 +35,7 @@ button {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    color: white;
+    color: green;
     background: transparent;
     border: 3px solid green;
     position: relative;
