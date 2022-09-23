@@ -74,13 +74,4 @@ class Laporan_model {
         $this->db->execute();
         return $this->db->rowCount();
     }
-
-    public function cariTransaksi() {
-        $keyword = $_POST['keyword'];
-        $query = "SELECT * FROM " . $this->table . " WHERE ket LIKE :keyword";
-        $this->db->query($query);
-        $this->db->bind('keyword', "%$keyword%");
-        
-        return $this->db->resultSet();
-    }
 }

@@ -6,7 +6,7 @@ function money_format($string, $angka) {
 ?>
 
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
-    <div>
+    <div class="row">
         <canvas id="myChart" width="200px"></canvas>
     </div>
     <div class="row justify-content-center">
@@ -84,5 +84,5 @@ function money_format($string, $angka) {
             },
         }
     });
-    console.log(textVisit);
+    console.log(thnNow);
 </script>
