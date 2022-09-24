@@ -4,7 +4,6 @@ html body {
 
 body {
     background-image: url("../image/cobanb1.png");
-    /*background-size: cover;*/
 }
 
 #btnTiket {
@@ -22,6 +21,7 @@ body {
     opacity: 0.4;
     font-size: 90px;
 }
+
 .home h1 {
     font-size: 80px;
     margin-top: 80px;
