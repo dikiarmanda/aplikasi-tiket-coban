@@ -50,7 +50,7 @@ setlocale(LC_MONETARY,"id_ID");
             <?php $jmlhHal = ceil($data['jmlhData'] / 20) ?>
             <?php $hal = $data['page']/20+1?>
             <nav aria-label="Page navigation">
-                <ul class="pagination">
+                <ul class="pagination justify-content-center">
                     <li class="page-item <?php if ($hal==1) { echo 'disabled'; } ?>">
                         <a class="page-link" href="<?= BASEURL ?>/laporan/index/<?= $hal-1 ?>" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
