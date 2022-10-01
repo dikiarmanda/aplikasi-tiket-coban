@@ -21,24 +21,19 @@ function money_format($string, $angka) {
             <?php $penjualan += $transaksi['jmlh']?>
         <?php endforeach ?>
         <h5><p>Jumlah Penjualan Tiket: <?= money_format('%i', $penjualan) ?></p></h5>
-        <p>Jumlah Penjualan Tiket: <?= money_format('%i', $penjualan) ?></p>
         <table class="table w-75">
             <thead>
                 <tr>
-                    <th>No.</th>
-                    <th>Tanggal</th>
-                    <th>Nominal</th>
+                    <th>Tahun</th>
+                    <th>Jumlah Pengunjung</th>
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1 ?>
                 <?php foreach ($data['jualTiket'] as $transaksi) : ?>
                 <tr>
-                    <td scope="row"><?= $i ?></td>
-                    <td><?= $transaksi['tgl'] ?></td>
+                    <td scope="row"><?= $transaksi['tgl'] ?></td>
                     <td class="text-end pe-4"><?= money_format('%i', $transaksi['jmlh']) ?></td>
                 </tr>
-                <?php $i++ ?>
                 <?php endforeach ?>
             </tbody>
         </table>
@@ -46,10 +41,18 @@ function money_format($string, $angka) {
 </div>
 <script>
     let thnNow = moment().format('Y');
+    let rangeThn = [2021, <?= end($data['thn']['list']); ?>];
     const label = [];
+    console.log(label);
     for (let i = 0; i < 5; i++) {
         label[i] = thnNow-1;
         thnNow++;
+    }
+    let dataThn = {};
+
+    let batas = rangeThn[1];
+    for (let i = 2021; i <= batas; i++) {
+        dataThn[i][visitor] = <?= $data['thn']?>
     }
 
     // grafik visitor tahunan
@@ -60,7 +63,7 @@ function money_format($string, $angka) {
             labels: label,
             datasets: [{
                 label: 'Pengunjung',
-                data: [120, 190, 130, 230, 220],
+                data: [1,2,3,4,5],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -86,9 +89,6 @@ function money_format($string, $angka) {
                     display: true,
                     text: 'GRAFIK PENGUNJUNG TAHUNAN',
                     fullsize: true,
-                    // padding: {
-                    //     bottom: '100px',
-                    // }
                 },
                 legend: {
                     display: false,
@@ -131,9 +131,6 @@ function money_format($string, $angka) {
                     display: true,
                     text: 'GRAFIK PENJUALAN TIKET TAHUNAN',
                     fullsize: true,
-                    // padding: {
-                    //     bottom: '100px',
-                    // }
                 },
                 legend: {
                     display: false,
