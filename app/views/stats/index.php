@@ -41,18 +41,11 @@ function money_format($string, $angka) {
 </div>
 <script>
     let thnNow = moment().format('Y');
-    let rangeThn = [2021, <?= end($data['thn']['list']); ?>];
     const label = [];
     console.log(label);
     for (let i = 0; i < 5; i++) {
         label[i] = thnNow-1;
         thnNow++;
-    }
-    let dataThn = {};
-
-    let batas = rangeThn[1];
-    for (let i = 2021; i <= batas; i++) {
-        dataThn[i][visitor] = <?= $data['thn']?>
     }
 
     // grafik visitor tahunan
@@ -63,7 +56,7 @@ function money_format($string, $angka) {
             labels: label,
             datasets: [{
                 label: 'Pengunjung',
-                data: [1,2,3,4,5],
+                data: [120, 190, 130, 230, 220, 330],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -80,7 +73,8 @@ function money_format($string, $angka) {
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)'
                 ],
-                borderWidth: 1
+                borderWidth: 5,
+                // tension: 0.1
             }]
         },
         options: {
@@ -88,7 +82,9 @@ function money_format($string, $angka) {
                 title: {
                     display: true,
                     text: 'GRAFIK PENGUNJUNG TAHUNAN',
-                    fullsize: true,
+                    font: {
+                        size: 36,
+                    }
                 },
                 legend: {
                     display: false,
@@ -122,7 +118,8 @@ function money_format($string, $angka) {
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)'
                 ],
-                borderWidth: 1
+                borderWidth: 5,
+                // tension: 0.3
             }]
         },
         options: {
@@ -130,7 +127,9 @@ function money_format($string, $angka) {
                 title: {
                     display: true,
                     text: 'GRAFIK PENJUALAN TIKET TAHUNAN',
-                    fullsize: true,
+                    font: {
+                        size: 36,
+                    }
                 },
                 legend: {
                     display: false,
