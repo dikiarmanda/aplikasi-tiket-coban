@@ -30,12 +30,16 @@ class Stats_model {
             $thn[] = $text[0];
         }
         
-        $data['visitorBln'] = [0,0,0,0,0,0,0,0,0,0,0,0,0];
-        $data['tiketBln'] = [0,0,0,0,0,0,0,0,0,0,0,0,0];
+        $data['visitorBln'] = [0,0,0,0,0,0,0,0,0,0,0,0];
+        $data['tiketBln'] = [0,0,0,0,0,0,0,0,0,0,0,0];
         // rekap data visitor dan jumlah penjualan tiket per bulan di tahun tertentu
         for ($i=0; $i < count($dataTiket); $i++) { 
             if ($thn[$i] == $tahun) {
                 switch ($bln[$i]) {
+                    case 0:
+                        $data['visitorBln'][0]++;
+                        $data['tiketBln'][0] += $dataTiket[$i]['jmlh'];
+                        break;
                     case 1:
                         $data['visitorBln'][1]++;
                         $data['tiketBln'][1] += $dataTiket[$i]['jmlh'];
@@ -80,10 +84,6 @@ class Stats_model {
                         $data['visitorBln'][11]++;
                         $data['tiketBln'][11] += $dataTiket[$i]['jmlh'];
                         break;
-                    case 12:
-                        $data['visitorBln'][12]++;
-                        $data['tiketBln'][12] += $dataTiket[$i]['jmlh'];
-                        break;
                     
                     default:
                         break;
@@ -110,6 +110,7 @@ class Stats_model {
             array_shift($data['tahunan'][$cek]);
         }
         $data['tahunan']['list'] = $thn;
+        sort($data['tahunan']['list']);
         return $data['tahunan'];
     }
 }

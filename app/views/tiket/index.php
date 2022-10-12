@@ -31,7 +31,7 @@
 </div>
 <!-- Modal trigger button -->
 <button type="button" id="btnTiket" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalTiket">
-    Harga Tiket
+    <i class="fa-solid fa-ticket-simple"></i> Ubah Harga Tiket
 </button>
 
 <!-- Modal Body -->

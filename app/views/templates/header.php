@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman <?= $data['judul'] ?></title>
     <!-- FIXME: tambahkan icon untuk title website -->
-    <link rel="shortcut icon" href="<?= BASEURL ?>/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= BASEURL ?>/img/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/all.min.css">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/style.css">
@@ -15,7 +15,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand" href="<?= BASEURL ?>">Coban Binangun</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

@@ -12,8 +12,9 @@ class Stats extends Controller {
     
     public function tahun($tahun) {
         $data['judul'] = 'Statistik ' . $tahun;
+        $data['year'] = $tahun;
         $temp[] = $this->model('Stats_model')->getDataBulan($tahun);
-        $data['visitorBln'] = $temp[0]['visitorBln'];
+        $data['visitBln'] = $temp[0]['visitorBln'];
         $data['tiketBln'] = $temp[0]['tiketBln'];
         $this->view('templates/header', $data);
         $this->view('stats/tahun', $data);

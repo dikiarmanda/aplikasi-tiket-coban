@@ -53,7 +53,7 @@ class Tiket_model {
         for ($i=1; $i <= $data['jumlahTiket']; $i++) {
             $struk .= '=================================
                         <center>
-                            <img src="' . BASEURL . '/image/coban.jpg" width="150px">
+                            <img src="' . BASEURL . '/img/coban.jpg" width="150px">
                         </center><br>
                         <table>
                             <tr>
@@ -72,7 +72,7 @@ class Tiket_model {
                                 <td>Rp. ' . $data['hargaTiket'] . '</td>
                             </tr>
                         </table><br>
-                        <center><p>Supported By<br>PPK ORMAWA UMSIDA 2022</p></center>
+                        <center><p>Supported By<br>UMSIDA 2022</p></center>
                         =================================
                         <div class="page_break"></div>';
         }

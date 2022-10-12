@@ -18,7 +18,7 @@ setlocale(LC_MONETARY,"id_ID");
         <div class="card bg-success mt-2" style="width: 18rem;">
             <div class="card-body">
                 <div class="card-body-icon">
-                    <i class="fas fa-user-clock"></i>
+                    <i class="fa-solid fa-circle-chevron-up"></i>
                 </div>
                 <h4 class="card-title">PEMASUKAN</h4>
                 <h4 class="fw-bold mt-5"><?= money_format("%i", $data['income']) ?></h4>
@@ -27,7 +27,7 @@ setlocale(LC_MONETARY,"id_ID");
         <div class="card bg-danger mt-2" style="width: 18rem;">
             <div class="card-body">
                 <div class="card-body-icon">
-                    <i class="fas fa-book"></i>
+                    <i class="fa-solid fa-circle-chevron-down"></i>
                 </div>
                 <h4 class="card-title">PENGELUARAN</h4>
                 <h4 class="fw-bold mt-5"><?= money_format("%i", $data['outcome']) ?></h4>
@@ -36,7 +36,7 @@ setlocale(LC_MONETARY,"id_ID");
         <div class="card bg-info mt-2" style="width: 18rem;">
             <div class="card-body">
                 <div class="card-body-icon">
-                    <i class="fas fa-user"></i>
+                    <i class="fa-solid fa-dollar-sign"></i>
                 </div>
                 <h4 class="card-title">SALDO</h4>
                 <h4 class="fw-bold mt-5"><?= money_format("%i",$data['income']-$data['outcome']) ?></h4>
