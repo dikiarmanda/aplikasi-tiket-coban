@@ -5,7 +5,6 @@ function money_format($string, $angka) {
 }
 setlocale(LC_MONETARY,"id_ID");
 ?>
-<!-- FIXME: atur layout biar cantik dan enak dipandang -->
 <div class="container bg-light bg-opacity-50 rounded-4 mt-3">
     <!-- notifikasi flasher -->
     <div class="row justify-content-center">
