@@ -91,7 +91,7 @@ setlocale(LC_MONETARY,"id_ID");
                         <th>No.</th>
                         <th>Tanggal</th>
                         <th>Keterangan</th>
-                        <th>Nominal</th>
+                        <th colspan="2" class="text-center">Nominal</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -103,6 +103,7 @@ setlocale(LC_MONETARY,"id_ID");
                                 <td scope="row"><?= $i+1 ?></td>
                                 <td><?= $data['transaksi'][$i]['tgl'] ?></td>
                                 <td><?= $data['transaksi'][$i]['ket'] ?></td>
+                                <td class="bg-opacity-100"><?= ($data['transaksi'][$i]['jmlh']<0) ? '<span class="badge text-bg-danger">Dana Keluar</span>' : '<span class="badge text-bg-success">Dana Masuk</span>' ?></td>
                                 <td class="text-end"><?= money_format("%i", $data['transaksi'][$i]['jmlh']) ?></td>
                                 <td><a href="<?= BASEURL ?>/laporan/ubah/<?= $data['transaksi'][$i]['id'] ?>" class="text-center ms-2 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $data['transaksi'][$i]['id'] ?>"><i class="fas fa-pen text-success"></i></a>
                                     <a href="<?= BASEURL ?>/laporan/hapus/<?= $data['transaksi'][$i]['id'] ?>" class="text-center ms-2" onclick="return confirm('yakin?')"><i class="fas fa-trash text-danger"></i></a>
