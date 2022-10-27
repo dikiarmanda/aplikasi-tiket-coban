@@ -1,5 +1,6 @@
-<div class="container text-center py-5 my-5">
-    <div class="row w-50 bg-light bg-opacity-50 rounded-4 py-3 mt-3 mx-auto">
+<div class="container text-center py-5 my-3">
+    <div class="row w-50 text-light bg-light bg-opacity-25 rounded-4 py-3 mx-auto">
+        <img src="<?= BASEURL ?>/img/logoCoban.png" width="50%">
         <h1 class="display-2">Aplikasi Tiket</h1>
         <h1 class="display-2">Coban Binangun</h1>
     </div>
