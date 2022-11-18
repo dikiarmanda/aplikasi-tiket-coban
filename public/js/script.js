@@ -3,14 +3,18 @@ let harga = document.getElementById('hargaTiket');
 let jumlah = document.getElementById('jumlahTiket');
 let total = document.getElementById('totalHarga');
 
-jumlah.addEventListener('input', () => {
-    total.classList.remove('d-none');
+if (jumlah == undefined) {
+    console.log('Bukan halaman tiket');
+} else {
+    jumlah.addEventListener('input', () => {
+        total.classList.remove('d-none');
 
-    total.innerText = new Intl.NumberFormat('id-ID', { 
-        style: 'currency', 
-        currency: 'IDR'
-    }).format(harga.value * jumlah.value);
-});
+        total.innerText = new Intl.NumberFormat('id-ID', { 
+            style: 'currency', 
+            currency: 'IDR'
+        }).format(harga.value * jumlah.value);
+    });
+}
 
 // ubah modal pada laporan/index.php
 $(function() {

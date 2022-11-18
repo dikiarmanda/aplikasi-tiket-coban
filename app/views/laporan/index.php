@@ -38,7 +38,7 @@ setlocale(LC_MONETARY,"id_ID");
                     <i class="fa-solid fa-dollar-sign"></i>
                 </div>
                 <h4 class="card-title">SALDO</h4>
-                <h4 class="fw-bold mt-5"><?= money_format("%i",$data['income']-$data['outcome']) ?></h4>
+                <h4 class="fw-bold mt-5"><?= money_format("%i",$data['income']+$data['outcome']) ?></h4>
             </div>
         </div>
     </div>
@@ -74,10 +74,11 @@ setlocale(LC_MONETARY,"id_ID");
         </div>
     </div>
     <!-- End Pagination -->
+    <div id="cek"></div>
     <div class="row mx-3 px-5">
         <div class="col-sm-6">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btnTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
+            <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
                 <i class="fas fa-plus"></i> Tambah Transaksi
             </button>
         </div>

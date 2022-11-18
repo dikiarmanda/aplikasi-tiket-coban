@@ -33,19 +33,31 @@ class Laporan_model {
         $query = 'INSERT INTO ' . $this->table .' VALUES
                     ("",:tgl,:ket,:jmlh)';
 
+        $this->db->query('SELECT hargaTiket FROM config');
+        $tiket = intval($this->db->single());
+        
         // cek transaksi pemasukan / pengeluaran
-        if ($data['jnsTrans']==1) {
-            $data['jml']=abs($data['jml']);
-        } else {
-            $data['jml']=abs($data['jml'])*-1;
-        }
-
+        $data['jmlh'] = ($data['jnsTrans'] == 1) ? abs($data['jmlh']) : abs($data['jmlh'])*-1;
+        
         $this->db->query($query);
         $this->db->bind('tgl', $data['tgl']);
         $this->db->bind('ket', $data['ket']);
         $this->db->bind('jmlh', $data['jmlh']);
+        // cek transaksi tiket
+        if ($data['ket'] == 'tiket') {
+            // cek jumlah tiket
+            $jmlh = $data['jmlh'];
+            if (($jmlh/$tiket) > 1) {
+                // for ($i=0; $i < $jmlh/$tiket; $i++) { 
+                //     $this->db->execute();
+                // }
+                $data['ket'] = $jmlh/$tiket;
+                $this->db->execute();
+            } else {
+                $this->db->execute();
+            }
+        }
 
-        $this->db->execute();
         return $this->db->rowCount();
     }
 

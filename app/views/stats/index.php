@@ -4,12 +4,16 @@ function money_format($string, $angka) {
 	return $hasil_rupiah;
 }
 
+$thnAwal = $data['thn']['list'][0];
+$thnAkhir = end($data['thn']['list']);
+
 $visit = [];
 $profit = [];
-for ($i=2021; $i <= end($data['thn']['list']); $i++) { 
+
+for ($i=$thnAwal; $i <= $thnAkhir; $i++) { 
     array_push($visit, $data['thn'][$i]['visitorThn']);
 }
-for ($i=2021; $i <= end($data['thn']['list']); $i++) { 
+for ($i=$thnAwal; $i <= $thnAkhir; $i++) { 
     array_push($profit, $data['thn'][$i]['tiketThn']);
 }
 while (count($visit) < 5) {
@@ -76,7 +80,6 @@ for ($i=0; $i < count($data['jualTiket']); $i++) {
 <script>
     let thnNow = moment().format('Y');
     const label = [];
-    let rangeThn = [thnNow-1, <?= end($data['thn']['list']) ?>];
     for (let i = 0; i < 5; i++) {
         label[i] = thnNow-1;
         thnNow++;
