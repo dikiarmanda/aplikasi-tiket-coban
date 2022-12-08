@@ -5,7 +5,7 @@
             <?php Flasher::flash() ?>
         </div>
     </div>
-    <form action="<?= BASEURL ?>/tiket/cetak/" method="post">
+    <form action="<?= BASEURL ?>/tiket/cetak/" method="post" class="bg-white rounded-4 shadow p-4">
         <input type="hidden" name="tgl" value="<?= date('Y-m-d') ?>">
         <input type="hidden" name="ket" value="tiket">
         <div class="mb-3">

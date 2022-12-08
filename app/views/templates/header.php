@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?= BASEURL ?>/css/style.css">
     <script src="<?= BASEURL ?>/js/chart.js"></script>
     <script src="<?= BASEURL ?>/js/moment.js"></script>
+    <script src="../../vendor/node_modules/datatables.net/js/jquery.dataTables.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white topbar mb-4 sticky-top shadow">

@@ -8,11 +8,45 @@ $bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agust
 
 ?>
 
-<div class="container bg-light rounded-4 pt-4 mt-3">
+<div class="container bg-white rounded-4 shadow pt-4 mt-3">
     <div class="row my-3">
-        <h1>Data Tahun <?= $data['year'] ?></h1>
-        <h5>Jumlah Pengunjung: <?= array_sum($data['visitBln'])?></h5>
-        <h5>Jumlah Penjualan Tiket: <?= money_format('%i', array_sum($data['tiketBln'])) ?></h5>
+        <h1 class="text-center">Data Tahun <?= $data['year'] ?></h1>
+        <!-- Card -->
+        <div class="row my-4 text-white justify-content-evenly">
+            <div class="col-md-4 mb-4">
+                <div class="card border-5 border-start border-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col me-2">
+                                <div class="fw-bold text-primary text-uppercase mb-1">
+                                    Pengunjung</div>
+                                <div class="h5 mb-0 fw-bold text-black"><?= array_sum($data['visitBln'])?> orang</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-user fa-2x text-black opacity-25"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card border-5 border-start border-danger shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col me-2">
+                                <div class="fw-bold text-primary text-uppercase mb-1">
+                                    Penjualan</div>
+                                <div class="h5 mb-0 fw-bold text-black"><?= money_format('%i', array_sum($data['tiketBln'])) ?></div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-dollar fa-2x text-black opacity-25"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Card -->
     </div>
     <div class="row w-75 my-3 mx-auto">
         <canvas id="statVisit"></canvas>

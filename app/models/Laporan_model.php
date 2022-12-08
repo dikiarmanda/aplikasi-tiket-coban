@@ -36,9 +36,6 @@ class Laporan_model {
         $this->db->query('SELECT hargaTiket FROM config');
         $tiket = intval($this->db->single());
         
-        // cek transaksi pemasukan / pengeluaran
-        $data['jmlh'] = ($data['jnsTrans'] == 1) ? abs($data['jmlh']) : abs($data['jmlh'])*-1;
-        
         $this->db->query($query);
         $this->db->bind('tgl', $data['tgl']);
         $this->db->bind('ket', $data['ket']);
