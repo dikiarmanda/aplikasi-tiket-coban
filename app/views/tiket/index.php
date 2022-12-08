@@ -30,7 +30,7 @@
     </form>
 </div>
 <!-- Modal trigger button -->
-<button type="button" id="btnTiket" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalTiket">
+<button type="button" id="btnTiket" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalTiket">
     <i class="fa-solid fa-ticket-simple"></i> Ubah Harga Tiket
 </button>
 

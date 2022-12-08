@@ -19,11 +19,11 @@ class Tiket extends Controller {
 
     public function harga() {
         if ($this->model('Tiket_model')->ubahHarga($_POST) > 0) {
-            Flasher::setFlash('berhasil', 'diubah', 'success');
+            Flasher::setFlash('Tiket', 'berhasil', 'diubah', 'success');
             header('Location: ' . BASEURL . '/tiket');
             exit;
         } else {
-            Flasher::setFlash('gagal', 'diubah', 'danger');
+            Flasher::setFlash('Tiket', 'gagal', 'diubah', 'danger');
             header('Location: ' . BASEURL . '/tiket');
             exit;
         }

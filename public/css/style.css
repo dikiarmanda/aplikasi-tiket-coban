@@ -3,18 +3,17 @@ html body {
 }
 
 body {
-    background: linear-gradient(45deg, #fbda61, #ff5acd);
-    background-repeat: no-repeat;
+    background-color: #f8f9fc;
 }
 
 /* btn /tiket/index */
 #btnTiket {
     position: absolute;
-    bottom: 20px;
+    bottom: 100px;
     right: 20px;
 }
 
-/* icon /laporan/index */
+/* icon /laporan/index
 .card-body .card-body-icon {
     position: absolute;
     z-index: 0;
@@ -22,4 +21,4 @@ body {
     right: 10px;
     opacity: 0.4;
     font-size: 90px;
-}
+} */

@@ -20,11 +20,11 @@ class Laporan extends Controller {
 
     public function tambah() {
         if ($this->model('Laporan_model')->tambahTransaksi($_POST) > 0) {
-            Flasher::setFlash('berhasil', 'ditambahkan', 'success');
+            Flasher::setFlash('Transaksi', 'berhasil', 'ditambahkan', 'success');
             header('Location: ' . BASEURL . '/laporan');
             exit;
         } else {
-            Flasher::setFlash('gagal', 'ditambahkan', 'danger');
+            Flasher::setFlash('Transaksi', 'gagal', 'ditambahkan', 'danger');
             header('Location: ' . BASEURL . '/laporan');
             exit;
         }
@@ -32,11 +32,11 @@ class Laporan extends Controller {
 
     public function hapus($id) {
         if ($this->model('Laporan_model')->hapusTransaksi($id) > 0) {
-            Flasher::setFlash('berhasil', 'dihapus', 'success');
+            Flasher::setFlash('Transaksi', 'berhasil', 'dihapus', 'success');
             header('Location: ' . BASEURL . '/laporan');
             exit;
         } else {
-            Flasher::setFlash('gagal', 'dihapus', 'danger');
+            Flasher::setFlash('Transaksi', 'gagal', 'dihapus', 'danger');
             header('Location: ' . BASEURL . '/laporan');
             exit;
         }
@@ -48,11 +48,11 @@ class Laporan extends Controller {
 
     public function ubah() {
         if ($this->model('Laporan_model')->ubahTransaksi($_POST) > 0) {
-            Flasher::setFlash('berhasil', 'diubah', 'success');
+            Flasher::setFlash('Transaksi', 'berhasil', 'diubah', 'success');
             header('Location: ' . BASEURL . '/laporan');
             exit;
         } else {
-            Flasher::setFlash('gagal', 'diubah', 'danger');
+            Flasher::setFlash('Transaksi', 'gagal', 'diubah', 'danger');
             header('Location: ' . BASEURL . '/laporan');
             exit;
         }
